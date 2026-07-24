@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Admin HMTP',
                 'role' => 'admin',
+                'email_verified_at' => now(),
                 'password' => Hash::make('password123'),
             ]
         );
@@ -27,6 +28,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Divisi Kewirausahaan',
                 'role' => 'divisi',
+                'email_verified_at' => now(),
                 'password' => Hash::make('password123'),
             ]
         );
@@ -36,6 +38,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Anggota HMTP',
                 'role' => 'anggota',
+                'email_verified_at' => now(),
                 'password' => Hash::make('password123'),
             ]
         );

@@ -42,6 +42,28 @@ class AuthenticationTest extends TestCase
         $this->assertGuest();
     }
 
+    public function test_admin_users_can_access_their_dashboard(): void
+    {
+        $user = User::factory()->create([
+            'role' => 'admin',
+        ]);
+
+        $response = $this->actingAs($user)->get('/admin/dashboard');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_divisi_users_can_access_their_dashboard(): void
+    {
+        $user = User::factory()->create([
+            'role' => 'divisi',
+        ]);
+
+        $response = $this->actingAs($user)->get('/divisi/dashboard');
+
+        $response->assertStatus(200);
+    }
+
     public function test_users_can_logout(): void
     {
         $user = User::factory()->create();
